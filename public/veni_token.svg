@@ -1,0 +1,20 @@
+<svg width="34" height="41" viewBox="0 0 34 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_955_656)">
+<path d="M6.42764 6.76838L15.3694 1.37158C17.2947 0.209473 19.7053 0.209473 21.6306 1.37158L30.5724 6.767C32.3899 7.86402 33.5006 9.83235 33.5 11.9553V25.3036C33.5 27.4261 32.3894 29.3938 30.5724 30.4905L21.6306 35.8859C19.7053 37.048 17.2947 37.048 15.3694 35.8859L6.42764 30.4905C4.61056 29.3938 3.5 27.4261 3.5 25.3036V11.9553C3.5 9.83135 4.61029 7.86624 6.42764 6.76838Z" fill="#FED84D"/>
+<path d="M6.42764 6.76838L15.3694 1.37158C17.2947 0.209473 19.7053 0.209473 21.6306 1.37158L30.5724 6.767C32.3899 7.86402 33.5006 9.83235 33.5 11.9553V25.3036C33.5 27.4261 32.3894 29.3938 30.5724 30.4905L21.6306 35.8859C19.7053 37.048 17.2947 37.048 15.3694 35.8859L6.42764 30.4905C4.61056 29.3938 3.5 27.4261 3.5 25.3036V11.9553C3.5 9.83135 4.61029 7.86624 6.42764 6.76838Z" stroke="#03594D"/>
+</g>
+<rect x="9.95093" y="23.6412" width="3.09789" height="17.3482" transform="rotate(-90 9.95093 23.6412)" fill="#DF6E3E"/>
+<rect x="9.95093" y="18.6846" width="3.09789" height="17.3482" transform="rotate(-90 9.95093 18.6846)" fill="#DF6E3E"/>
+<path d="M27.7602 10.5L21.0093 26.5H16.2212L9.5 10.5H14.2881L18.7193 21.3848L23.2993 10.5H27.7602Z" fill="#DF6E3E"/>
+<defs>
+<filter id="filter0_d_955_656" x="-8" y="-4" width="46" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feOffset dx="-3" dy="3" in="SourceAlpha" result="off"/>
+<feFlood flood-color="#03594D" flood-opacity="1" result="fl"/>
+<feComposite in="fl" in2="off" operator="in" result="sh"/>
+<feMerge>
+<feMergeNode in="sh"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+</defs>
+</svg>
