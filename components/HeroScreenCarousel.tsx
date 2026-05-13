@@ -4,11 +4,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
-const SCREENS = ["/ss_11.png", "/ss_22.png"];
+const SCREENS_TR = ["/ss_11.png", "/ss_22.png"];
+const SCREENS_EN = ["/ss_11_en.png", "/ss_22_en.png"];
 const INTERVAL_MS = 4500;
 
 export default function HeroScreenCarousel() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const SCREENS = locale === "en" ? SCREENS_EN : SCREENS_TR;
   const [active, setActive] = useState(0);
 
   useEffect(() => {
