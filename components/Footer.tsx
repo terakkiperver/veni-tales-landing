@@ -21,13 +21,25 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-start gap-6 text-sm md:justify-end">
-            <Link href="/privacy" className="text-primary-light transition-colors hover:text-primary">
+            <Link
+              href="/privacy"
+              prefetch={false}
+              className="text-primary-light transition-colors hover:text-primary"
+            >
               {t.footer.privacy}
             </Link>
-            <Link href="/terms" className="text-primary-light transition-colors hover:text-primary">
+            <Link
+              href="/terms"
+              prefetch={false}
+              className="text-primary-light transition-colors hover:text-primary"
+            >
               {t.footer.terms}
             </Link>
-            <Link href="/support" className="text-primary-light transition-colors hover:text-primary">
+            <Link
+              href="/support"
+              prefetch={false}
+              className="text-primary-light transition-colors hover:text-primary"
+            >
               {t.footer.support}
             </Link>
           </div>

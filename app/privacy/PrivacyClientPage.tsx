@@ -3,6 +3,11 @@
 import LegalPageShell from "@/components/LegalPageShell";
 import { useLanguage } from "@/components/LanguageProvider";
 import {
+  LEGAL_ENTITY_ADDRESS_EN,
+  LEGAL_ENTITY_ADDRESS_TR,
+  LEGAL_ENTITY_NAME_EN,
+  LEGAL_ENTITY_NAME_TR,
+  LEGAL_ENTITY_VKN,
   LEGAL_LAST_UPDATED,
   LEGAL_LAST_UPDATED_EN,
   SUPPORT_EMAIL,
@@ -33,53 +38,66 @@ function PrivacyTr({ email }: { email: string }) {
         <p>
           Bu gizlilik politikası, Veni Tales mobil uygulaması ve bu web sitesi (&quot;Hizmet&quot;)
           kapsamında kişisel verilerinizin nasıl işlendiğini açıklar. Hizmeti kullanarak bu politikada
-          özetlendiği şekilde veri işlemeyi kabul etmiş sayılırsınız. Politikayı sık sık
-          güncelleyebiliriz; önemli değişiklikleri uygulama veya web üzerinden bildirmeye çalışırız.
-        </p>
-        <p className="rounded-2xl border border-primary/10 bg-bg-cream p-4 text-sm text-primary">
-          Bu metin genel bilgilendirme amaçlıdır ve hukuki danışmanlık yerine geçmez. Şirket unvanı,
-          veri sorumlusu adresi ve veri işleme detaylarını (altyapı sağlayıcıları, saklama süreleri
-          vb.) yürürlükteki mevzuata ve fiili uygulamanıza göre netleştirmeniz gerekir.
+          özetlendiği şekilde veri işlemeyi kabul etmiş sayılırsınız. Politikayı güncelleyebiliriz;
+          önemli değişiklikleri uygulama veya web üzerinden bildirmeye çalışırız.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">Veri sorumlusu</h2>
         <p>
-          Kişisel verileriniz, Hizmeti sunan tüzel kişi (&quot;biz&quot;) tarafından 6698 sayılı
-          Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) ve ilgili mevzuat çerçevesinde
-          işlenir. Veri sorumlusuna ilişkin kimlik ve iletişim bilgileri için:{" "}
-          <a
-            href={`mailto:${email}`}
-            className="font-medium text-primary underline underline-offset-2"
-          >
-            {email}
-          </a>
+          <strong className="text-primary">{LEGAL_ENTITY_NAME_TR}</strong> (&quot;biz&quot;),
+          6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) ve ilgili mevzuat
+          kapsamında veri sorumlusudur.
         </p>
+        <ul className="list-inside list-disc space-y-2 pl-1 text-primary-light">
+          <li>
+            <strong className="text-primary">Adres:</strong> {LEGAL_ENTITY_ADDRESS_TR}
+          </li>
+          <li>
+            <strong className="text-primary">Vergi kimlik numarası (VKN):</strong>{" "}
+            {LEGAL_ENTITY_VKN}
+          </li>
+          <li>
+            <strong className="text-primary">İletişim:</strong>{" "}
+            <a
+              href={`mailto:${email}`}
+              className="font-medium text-primary underline underline-offset-2"
+            >
+              {email}
+            </a>
+          </li>
+        </ul>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">
-          Hangi veriler toplanabilir?
+          İşlenen veri kategorileri (özet)
         </h2>
         <ul className="list-inside list-disc space-y-2 pl-1">
           <li>
-            <strong className="text-primary">Hesap ve profil:</strong> örneğin e-posta, oturum
-            bilgileri, çocuk profili için sağladığınız isim, yaş ve tercihler (uygulama akışına göre).
+            <strong className="text-primary">Kimlik / profil:</strong> çocuk profili için
+            sağladığınız ad veya takma ad, yaş veya yaş aralığı, ilgi alanları ve tercihler (uygulama
+            akışına göre).
           </li>
           <li>
-            <strong className="text-primary">Kullanım verisi:</strong> uygulama sürümü, cihaz ve
-            işletim sistemi özeti, çökme raporları, özellik kullanımına dair teknik günlükler.
+            <strong className="text-primary">İletişim ve hesap:</strong> kayıt yönteminize bağlı
+            olarak e-posta; kullanıcı tanımlayıcısı; oturum ve kimlik doğrulama ile ilgili teknik
+            bilgiler.
           </li>
           <li>
-            <strong className="text-primary">Ödeme ve abonelik:</strong> satın alma işlemleri
-            genellikle Apple App Store gibi platformlar üzerinden yürütülür; ödeme kartı bilgileriniz
-            bize doğrudan iletilmez. Platformun paylaştığı işlem ve abonelik durumu ile sınırlı bilgiler
-            işlenebilir.
+            <strong className="text-primary">İşlem / satın alma:</strong> uygulama içi satın alma ve
+            abonelikler için platformların paylaştığı işlem kimliği, ürün tanımlayıcısı, satın alma
+            tarihi ve tutarı, abonelik durumu gibi sınırlı bilgiler (kart bilgisi bize iletilmez).
           </li>
           <li>
-            <strong className="text-primary">İçerik ve tercihler:</strong> masal oluşturma için
-            girdiğiniz metinler, tema ve ortam tercihleri, seslendirme veya üretimle ilgili seçimler.
+            <strong className="text-primary">İçerik:</strong> masal oluşturmak için girdiğiniz
+            metinler, tema ve ortam tercihleri, seslendirme veya üretimle ilgili seçimler.
+          </li>
+          <li>
+            <strong className="text-primary">Kullanım ve cihaz:</strong> uygulama sürümü, dil
+            tercihi, cihaz modeli ve işletim sistemi özeti, hata ve çökme günlükleri, özellik
+            kullanımına dair teknik kayıtlar (toplanan alanlar sürüme ve ayarlara göre değişebilir).
           </li>
         </ul>
       </section>
@@ -87,65 +105,212 @@ function PrivacyTr({ email }: { email: string }) {
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">İşleme amaçları</h2>
         <p>
-          Verileriniz; hesabınızı sağlamak ve güvence altına almak, masal ve sesli içerik üretimi,
-          kaliteyi iyileştirmek, destek taleplerinizi yanıtlamak, yasal yükümlülükleri yerine getirmek
-          ve — açık rıza veya yasal dayanak varsa — size bildirim veya pazarlama iletişimi sunmak
-          amacıyla işlenebilir.
+          Verileriniz; hesabınızı sağlamak ve güvence altına almak, kişiselleştirilmiş masal ve sesli
+          içerik üretmek, hizmet kalitesini iyileştirmek, destek taleplerinizi yanıtlamak ve yasal
+          yükümlülükleri yerine getirmek amacıyla işlenir.
+        </p>
+        <p>
+          <strong className="text-primary">Şu an için:</strong> ticari amaçlı pazarlama e-postası
+          göndermiyoruz; pazarlama bildirimi için anlık bildirim (push) kullanmıyoruz; bu web sitesinde
+          analitik veya reklam amaçlı çerez uygulamıyoruz. Yalnızca hizmetin işletilmesi için gerekli
+          teknik çerezler veya benzeri oturum unsurları kullanılabilir.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">
-          Hukuki sebep ve aktarım
+          Yapay zeka ile üretilen içerik ve ses
         </h2>
         <p>
-          KVKK&apos;nın 5. ve 6. maddelerinde öngörülen; sözleşmenin kurulması veya ifası, veri
-          sorumlusunun meşru menfaati, açık rıza veya hukuki yükümlülük gibi hukuki sebeplere
-          dayanarak işleme yapılabilir. Bulut barındırma, kimlik doğrulama, yapay zeka veya ses
-          üretimi, analitik ve çökme raporlama gibi hizmetler için güvenilir iş ortaklarına ve
-          yurtiçi/yurtdışı sunucularda — gerekli güvenlik önlemleri ve hukuki düzenlemeler çerçevesinde
-          — aktarım yapılabilir.
+          Masal metni oluşturmak için sağladığınız girdiler (örneğin çocuğa ait isim, yaş veya yaş
+          aralığı, ilgi alanları, tema ve istemler) yapay zeka tabanlı içerik üretim hizmeti
+          sağlayıcılarımıza iletilerek işlenebilir. Üretilen metin, seslendirme için metinden sese
+          hizmet sağlayıcılarına aktarılabilir.
         </p>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="font-display text-xl font-semibold text-primary">Saklama süresi</h2>
         <p>
-          Veriler, işleme amacının gerektirdiği süre boyunca ve yasal zamanaşımı / düzenlemelerin
-          öngördüğü sürelerle sınırlı olarak saklanır; süre sonunda silinir, anonimleştirilir veya
-          imha edilir.
+          <strong className="text-primary">Model eğitimi:</strong> girdilerinizi veya üretilen
+          masalları yapay zeka modellerini eğitmek için kullanmıyoruz; bu amaçla işleme yapmıyoruz.
+          Sağlayıcıların kendi politikalarına tabi ek işlemleri için ilgili sağlayıcı belgelerine
+          bakınız.
         </p>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="font-display text-xl font-semibold text-primary">Çocuklar</h2>
         <p>
-          Veni Tales çocuklara yönelik içerik sunabilir; kişisel verilerin işlenmesinde veli veya
-          vasinin gerektiğinde onay veya bilgilendirmesini temel alırız. Çocuğa ait işlemler için yalnızca
-          gerekli minimum veriyi toplamayı hedefleriz. Bir çocuğa ait veriyi hukuka aykırı toplandığına
-          inanıyorsanız lütfen bizimle iletişime geçin.
+          İçerik güvenliği için makul teknik ve süreç önlemleri uyguluyoruz; buna rağmen yapay zeka
+          çıktıları her zaman hatasız veya her yaş için uygun olmayabilir. Veli veya vasi olarak
+          içeriği çocuğunuza sunmadan önce değerlendirmeniz önemlidir.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">
-          KVKK kapsamındaki haklarınız
+          Üçüncü taraflar ve alt işlemciler
         </h2>
         <p>
-          Kanun&apos;un 11. maddesi uyarınca verilerinizin işlenip işlenmediğini öğrenme, bilgi talep
-          etme, düzeltme ve silme, aktarılan üçüncü kişileri bilme, zarar halinde tazminat talep etme
-          gibi haklara sahipsiniz. Taleplerinizi{" "}
+          Hizmeti sunmak için aşağıdaki <strong className="text-primary">kategorilerde</strong>{" "}
+          hizmet sağlayıcılarından yararlanıyoruz. Bu bölümde ticari unvanları tek tek listelemiyoruz;
+          güncel liste veya ek bilgi talebi için{" "}
           <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
             {email}
           </a>{" "}
-          adresine iletebilirsiniz.
+          adresinden bize yazabilirsiniz.
+        </p>
+        <ul className="list-inside list-disc space-y-2 pl-1">
+          <li>Mobil uygulama mağazası ve uygulama içi ödeme altyapısı</li>
+          <li>Abonelik ve satın alma yönetimi altyapısı</li>
+          <li>Bulut barındırma, veri tabanı ve uygulama arka ucu</li>
+          <li>Kimlik doğrulama ve güvenlik hizmetleri</li>
+          <li>Yapay zeka ile metin üretimi hizmetleri</li>
+          <li>Metinden sese / ses sentezi hizmetleri</li>
+          <li>Çökme raporlama veya hata izleme araçları (kullanıldığı ölçüde)</li>
+        </ul>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Yurtdışına aktarım</h2>
+        <p>
+          Bazı hizmet sağlayıcılarımızın sunucuları veya tüzel kişilikleri yurt dışında bulunabilir.
+          Bu durumda kişisel verileriniz, KVKK ve ilgili mevzuatta öngörülen şartlara ve sözleşmesel /
+          teknik güvencelere uygun olarak yurt dışına aktarılabilir. Aktarımın hukuki sebebi; sözleşmenin
+          ifası, açık rızanız, meşru menfaat veya kanunda öngörülen diğer hukuki dayanaklardan biri
+          olabilir.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Hukuki sebep</h2>
+        <p>
+          İşleme; KVKK&apos;nın 5. ve 6. maddelerinde öngörülen; sözleşmenin kurulması veya ifası,
+          hukuki yükümlülük, meşru menfaat veya açık rıza (örneğin isteğe bağlı özellikler) gibi
+          sebeplere dayanabilir.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Ödeme ve abonelik</h2>
+        <p>
+          Uygulama içi satın almalar (örneğin kredi paketleri) ve abonelikler büyük ölçüde Apple App
+          Store ve buna bağlı ödeme / abonelik yönetimi altyapısı üzerinden yürütülür. Ödeme kartı
+          bilgileriniz bize doğrudan iletilmez. İşlemle ilgili olarak platform ve altyapı
+          sağlayıcılarından işlem kimliği, ürün tanımlayıcısı, tarih ve tutar, abonelik durumu gibi
+          sınırlı veriler işlenebilir. İade talepleri öncelikle Apple&apos;ın süreçlerine tabidir;
+          süreçte size yardımcı olmak için{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>{" "}
+          üzerinden iletişime geçebilirsiniz.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Saklama süreleri</h2>
+        <p>
+          Veriler; işlendikleri amaç için gerekli süre boyunca ve vergi, muhasebe, ticaret ve benzeri
+          yasal saklama yükümlülükleri ile teknik yedekleme uygulamalarımız çerçevesinde tutulur.
+          Süreler veri türüne göre değişebilir; süre dolduğunda silme, yok etme veya anonimleştirme
+          yapılır. Belirli saklama süreleri tablosunu bu politikayı güncelleyerek veya talebiniz
+          üzerine paylaşabiliriz.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">
+          Çocuklara ilişkin kişisel veriler
+        </h2>
+        <p>
+          Veni Tales çocuklara yönelik içerik sunabilir; hesap oluşturma, satın alma ve sözleşmeye
+          bağlı işlemler veli veya vasi tarafından yürütülür. Çocuğa ait verileri yalnızca masalı
+          kişiselleştirme ve hizmetin sunulması için gerekli ölçüde işleriz.
+        </p>
+        <p>
+          <strong className="text-primary">Örnek olarak işlenebilecekler:</strong> çocuk için kullanılan
+          ad veya takma ad, yaş veya yaş aralığı, ilgi ve tema tercihleri, uygulama içi dinleme veya
+          oluşturma geçmişi (özellikler açıksa).
+        </p>
+        <p>
+          <strong className="text-primary">Toplamadığımız veya talep etmediğimiz örnekler:</strong>{" "}
+          çocuğun fotoğrafı veya videosu, çocuğun ses kaydı (masal üretimi için ayrıca talep etmediğimiz
+          sürece), çocuğun e-posta veya telefonu, çocuğa ait kesin konum verisi, çocuğun sosyal medya
+          profili.
+        </p>
+        <p>
+          Veli veya vasi; çocuğa ait verileri görüntüleme, düzeltme veya silme talebinde bulunmak için
+          uygulama içi akışları kullanabilir veya{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>{" "}
+          adresinden bize yazabilir. Hukuka aykırı toplandığına inandığınız veriler için derhal bize
+          bildirimde bulunun.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Hesabın silinmesi</h2>
+        <p>
+          Hesabınızı ve ilişkili kişisel verilerinizi silmek için uygulamada{" "}
+          <strong className="text-primary">Ayarlar → Hesap → Hesabımı sil</strong> yolunu
+          kullanabilirsiniz. Alternatif olarak{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>{" "}
+          adresine kimliğinizi doğrulayabileceğimiz bilgilerle birlikte yazabilirsiniz. Yasal olarak
+          saklanması gereken kayıtlar (örneğin belirli muhasebe veya vergi kayıtları) saklı kalmak
+          kaydıyla, talebiniz uygun süre içinde işleme alınır; yedeklerden silme teknik olarak bir
+          süre daha gerektirebilir.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Veri güvenliği</h2>
+        <p>
+          Verilerinizin gizliliği ve bütünlüğü için makul teknik ve idari tedbirler (örneğin iletimde
+          şifreleme, erişim kontrolleri, tedarikçi değerlendirmesi) uygularız. İnternet üzerinden
+          veri iletiminin %100 güvenli olacağına dair garanti verilemez.
+        </p>
+        <p>
+          Kişisel verilerinizi etkileyen bir ihlal tespit edilmesi halinde, KVKK ve ilgili mevzuatta
+          öngörülen süre ve şekilde Kişisel Verileri Koruma Kurulu&apos;nu ve etkilenen kişileri
+          bilgilendirmek için gerekli adımları atarız.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">
+          KVKK kapsamındaki haklarınız (Madde 11)
+        </h2>
+        <p>Kanunun 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+        <ol className="list-inside list-decimal space-y-2 pl-1">
+          <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+          <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+          <li>İşlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+          <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
+          <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
+          <li>
+            KVKK&apos;nın 7. maddesinde öngörülen şartlar çerçevesinde silinmesini veya yok
+            edilmesini isteme,
+          </li>
+          <li>
+            (5) ve (6) bentleri uyarınca yapılan işlemlerin, verilerin aktarıldığı üçüncü kişilere
+            bildirilmesini isteme,
+          </li>
+          <li>
+            Münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun
+            ortaya çıkmasına itiraz etme,
+          </li>
+          <li>Kanuna aykırı işlenmesi sebebiyle zararın giderilmesini talep etme.</li>
+        </ol>
+        <p>
+          Taleplerinizi{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>{" "}
+          adresine iletebilirsiniz. Kimlik teyidi ve talebin niteliğine göre ek bilgi isteyebiliriz.
+          Yanıt süresi, yürürlükteki mevzuatta öngörülen sürelere tabidir.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">İletişim</h2>
         <p>
-          Gizlilik ile ilgili sorularınız için:{" "}
+          Gizlilik ve kişisel verilerle ilgili sorularınız için:{" "}
           <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
             {email}
           </a>
@@ -161,59 +326,69 @@ function PrivacyEn({ email }: { email: string }) {
     <>
       <section className="space-y-4">
         <p>
-          This privacy policy explains how we process your personal data when you use the Veni Tales
-          mobile application and this website (together, the &quot;Service&quot;). By using the
-          Service you agree to processing as described here. We may update this policy from time to
-          time and will try to notify you of material changes through the app or the website.
-        </p>
-        <p className="rounded-2xl border border-primary/10 bg-bg-cream p-4 text-sm text-primary">
-          This text is for general information only and does not replace legal advice. You should
-          finalize your legal entity name, data-controller address, and processing details (subprocessors,
-          retention periods, etc.) in line with applicable law and your actual practices.
+          This privacy policy explains how{" "}
+          <strong className="text-primary">{LEGAL_ENTITY_NAME_EN}</strong> (&quot;we&quot;,
+          &quot;us&quot;) processes personal data when you use the Veni Tales mobile application and
+          this website (together, the &quot;Service&quot;). We are established in Türkiye; if you live
+          elsewhere, additional rights may apply under local law. By using the Service you agree to
+          processing as described here. We may update this policy and will try to notify you of
+          material changes through the app or the website.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">Data controller</h2>
         <p>
-          Your personal data is processed by the legal entity that operates the Service
-          (&quot;we&quot;) in accordance with Law No. 6698 on the Protection of Personal Data
-          (&quot;KVKK&quot;) and related Turkish legislation, where applicable. For identification and
-          contact details of the data controller, please reach us at{" "}
-          <a
-            href={`mailto:${email}`}
-            className="font-medium text-primary underline underline-offset-2"
-          >
-            {email}
-          </a>
-          .
+          The data controller is <strong className="text-primary">{LEGAL_ENTITY_NAME_EN}</strong>,
+          processing personal data under Law No. 6698 on the Protection of Personal Data
+          (&quot;KVKK&quot;) and related Turkish legislation, where applicable.
         </p>
+        <ul className="list-inside list-disc space-y-2 pl-1 text-primary-light">
+          <li>
+            <strong className="text-primary">Address:</strong> {LEGAL_ENTITY_ADDRESS_EN}
+          </li>
+          <li>
+            <strong className="text-primary">Tax ID (VKN):</strong> {LEGAL_ENTITY_VKN}
+          </li>
+          <li>
+            <strong className="text-primary">Contact:</strong>{" "}
+            <a
+              href={`mailto:${email}`}
+              className="font-medium text-primary underline underline-offset-2"
+            >
+              {email}
+            </a>
+          </li>
+        </ul>
       </section>
 
       <section className="space-y-3">
-        <h2 className="font-display text-xl font-semibold text-primary">
-          What data may we collect?
-        </h2>
+        <h2 className="font-display text-xl font-semibold text-primary">Categories of personal data</h2>
         <ul className="list-inside list-disc space-y-2 pl-1">
           <li>
-            <strong className="text-primary">Account and profile:</strong> for example email, session
-            information, and information you provide for a child profile such as name, age, and
-            preferences (depending on app flows).
+            <strong className="text-primary">Identity / profile:</strong> name or display name, age
+            or age range, interests and preferences you provide for a child profile (depending on app
+            flows).
           </li>
           <li>
-            <strong className="text-primary">Usage data:</strong> app version, device and operating
-            system summary, crash reports, and technical logs related to feature usage.
+            <strong className="text-primary">Contact and account:</strong> email address if you sign
+            in that way; user identifiers; technical information related to sessions and
+            authentication.
           </li>
           <li>
-            <strong className="text-primary">Payments and subscriptions:</strong> purchases are
-            typically handled through platforms such as the Apple App Store; we do not receive your
-            full payment card details directly. We may process limited information shared by the
-            platform about transactions and subscription status.
+            <strong className="text-primary">Transactions / purchases:</strong> limited purchase and
+            subscription data such as transaction identifiers, product identifiers, date and amount,
+            and subscription status as shared by app stores and related infrastructure (we do not
+            receive your full card details).
           </li>
           <li>
-            <strong className="text-primary">Content and preferences:</strong> text you enter to
-            create stories, theme and setting preferences, and choices related to narration or
-            generation.
+            <strong className="text-primary">Content:</strong> text you enter to create stories, theme
+            and setting preferences, and choices related to narration or generation.
+          </li>
+          <li>
+            <strong className="text-primary">Usage and device:</strong> app version, language
+            preference, device model and OS summary, crash logs, and technical logs related to
+            feature usage (fields may vary by release and settings).
           </li>
         </ul>
       </section>
@@ -221,61 +396,201 @@ function PrivacyEn({ email }: { email: string }) {
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">Purposes of processing</h2>
         <p>
-          We may process your data to provide and secure your account, generate stories and audio
-          content, improve quality, respond to support requests, comply with legal obligations, and —
-          where there is a legal basis or explicit consent — to send notifications or marketing
-          communications.
+          We process data to provide and secure the Service, generate personalized stories and audio,
+          improve quality, respond to support requests, and comply with legal obligations.
+        </p>
+        <p>
+          <strong className="text-primary">Current practices:</strong> we do not send marketing
+          emails; we do not use push notifications for marketing; we do not use analytics or
+          advertising cookies on this website. Only cookies or similar technologies strictly necessary
+          to operate the site may be used.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">
-          Legal basis and transfers
+          AI-generated content and audio
         </h2>
         <p>
-          Processing may rely on legal bases set out in KVKK Articles 5 and 6, such as performance of
-          a contract, legitimate interests of the controller, explicit consent, or legal obligation.
-          We may transfer data to trusted partners and servers in Türkiye or abroad for hosting,
-          authentication, AI or audio generation, analytics, and crash reporting, subject to appropriate
-          safeguards and applicable law.
+          To generate story text, information you provide (such as the child&apos;s name or display
+          name, age or age range, interests, themes, and prompts) may be processed by providers of
+          AI-based text generation. Generated text may be sent to text-to-speech providers to create
+          audio.
+        </p>
+        <p>
+          <strong className="text-primary">Model training:</strong> we do not use your inputs or
+          generated stories to train AI models for our own purposes. Providers may have their own
+          policies for how they process data on their systems; please review their documentation where
+          relevant.
+        </p>
+        <p>
+          We apply reasonable technical and process measures for safety; AI outputs may still be
+          imperfect or unsuitable for some ages. Parents or guardians should review content before
+          sharing it with a child.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">
+          Subprocessors and third-party services
+        </h2>
+        <p>
+          We use providers in the following <strong className="text-primary">categories</strong>.
+          We do <strong className="text-primary">not</strong> list legal trade names individually in
+          this policy; you may request further information by emailing{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>
+          .
+        </p>
+        <ul className="list-inside list-disc space-y-2 pl-1">
+          <li>Mobile app store and in-app purchase infrastructure</li>
+          <li>Subscription and purchase management infrastructure</li>
+          <li>Cloud hosting, databases, and application backend</li>
+          <li>Authentication and security services</li>
+          <li>AI-based text generation services</li>
+          <li>Text-to-speech / voice synthesis services</li>
+          <li>Crash reporting or error monitoring tools (where used)</li>
+        </ul>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">International transfers</h2>
+        <p>
+          Some providers may process data outside Türkiye. Where this occurs, we rely on appropriate
+          safeguards and legal bases under KVKK and applicable law (such as contract performance,
+          explicit consent where required, or other permitted grounds).
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Legal basis</h2>
+        <p>
+          Processing may rely on legal bases under KVKK Articles 5 and 6, including performance of a
+          contract, legal obligation, legitimate interests, or explicit consent for optional features.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Payments and subscriptions</h2>
+        <p>
+          In-app purchases (such as credit packs) and subscriptions are primarily handled through the
+          Apple App Store and related payment and subscription infrastructure. We do not receive your
+          full payment card details. We may process limited data such as transaction identifiers,
+          product identifiers, date and amount, and subscription status. Refund requests are primarily
+          governed by Apple&apos;s processes; you may contact us at{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>{" "}
+          for assistance.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">Retention</h2>
         <p>
-          We retain data for as long as needed for the purposes described above and as required by
-          legal retention periods; after that period, data is deleted, anonymized, or destroyed.
+          We retain data for as long as necessary for the purposes described in this policy and as
+          required by tax, accounting, commercial, or similar legal retention rules, and in line with
+          our technical backup practices. Retention periods may vary by data category. When retention
+          ends, we delete, destroy, or anonymize data. We may publish a more detailed retention table in
+          updates to this policy or provide it upon request.
         </p>
       </section>
 
       <section className="space-y-3">
-        <h2 className="font-display text-xl font-semibold text-primary">Children</h2>
+        <h2 className="font-display text-xl font-semibold text-primary">Children&apos;s privacy</h2>
         <p>
-          Veni Tales may offer content aimed at children; where required we rely on a parent or
-          guardian&apos;s consent or information. We aim to collect only the minimum data necessary
-          for child-related features. If you believe we have collected a child&apos;s data unlawfully,
-          please contact us.
+          Veni Tales may offer child-directed content. Account creation, purchases, and contractual
+          steps are carried out by a parent or guardian. We process child-related data only to the
+          extent needed to personalize stories and provide the Service.
         </p>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="font-display text-xl font-semibold text-primary">Your rights under KVKK</h2>
         <p>
-          Under Article 11 of KVKK you may have the right to learn whether your data are processed,
-          request information, request correction or deletion, learn third parties to whom data are
-          transferred, and claim compensation in case of damage. You can submit requests to{" "}
+          <strong className="text-primary">Examples of what we may process:</strong> a name or
+          display name used in the story, age or age range, interests and theme preferences, and in-app
+          listening or creation history where features are enabled.
+        </p>
+        <p>
+          <strong className="text-primary">Examples of what we do not collect or ask for:</strong>{" "}
+          photos or videos of the child, the child&apos;s voice recordings (unless separately
+          requested for a feature you choose), the child&apos;s email or phone number, precise
+          location of the child, or the child&apos;s social media profiles.
+        </p>
+        <p>
+          Parents or guardians may exercise access, correction, or deletion through in-app flows or by
+          emailing{" "}
           <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
             {email}
           </a>
-          .
+          . If you believe we collected a child&apos;s data unlawfully, contact us immediately.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Account deletion</h2>
+        <p>
+          You can delete your account and related personal data in the app under{" "}
+          <strong className="text-primary">Settings → Account → Delete my account</strong>. You may
+          also email{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>{" "}
+          with information that allows us to verify your identity. Records we must keep by law (for
+          example certain accounting or tax records) may be retained as required. Deletion from
+          backups may take additional time for technical reasons.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Data security</h2>
+        <p>
+          We implement reasonable technical and organizational measures (such as encryption in
+          transit, access controls, and vendor review). No method of transmission over the internet is
+          completely secure.
+        </p>
+        <p>
+          If we become aware of a personal data breach that affects your personal data, we will take
+          steps to notify the Turkish Personal Data Protection Authority and affected individuals as
+          required by KVKK and related legislation.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display text-xl font-semibold text-primary">Your rights under KVKK (Article 11)</h2>
+        <p>Under Article 11 of KVKK, you have the right to:</p>
+        <ol className="list-inside list-decimal space-y-2 pl-1">
+          <li>Learn whether your personal data are processed,</li>
+          <li>Request information if they have been processed,</li>
+          <li>Learn the purpose of processing and whether data are used in line with that purpose,</li>
+          <li>Know third parties to whom personal data are transferred domestically or abroad,</li>
+          <li>Request rectification if data are incomplete or inaccurate,</li>
+          <li>
+            Request deletion or destruction of personal data under the conditions set out in Article
+            7 of KVKK,
+          </li>
+          <li>
+            Request notification of third parties to whom data were transferred about operations
+            carried out under items (5) and (6),
+          </li>
+          <li>
+            Object to outcomes against you where data are analyzed exclusively through automated
+            systems,
+          </li>
+          <li>Claim compensation for damage arising from unlawful processing.</li>
+        </ol>
+        <p>
+          Submit requests to{" "}
+          <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
+            {email}
+          </a>
+          . We may ask for identity verification and additional information depending on your request.
+          Response timelines follow statutory periods under applicable law.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="font-display text-xl font-semibold text-primary">Contact</h2>
         <p>
-          For privacy-related questions, email us at{" "}
+          For privacy questions:{" "}
           <a href={`mailto:${email}`} className="font-medium text-primary underline underline-offset-2">
             {email}
           </a>

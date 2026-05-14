@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "clean": "rm -rf .next node_modules/.cache .turbo && rm -f tsconfig.tsbuildinfo",
+    "dev": "next dev -H 127.0.0.1",
+    "dev:fresh": "npm run clean && next dev -H 127.0.0.1",
+    "dev:turbo": "next dev --turbo -H 127.0.0.1",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H 127.0.0.1",
     "lint": "next lint"
   },
   "dependencies": {

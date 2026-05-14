@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Footer from "@/components/Footer";
@@ -27,13 +29,19 @@ export default function LegalPageShell({
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-5 lg:px-8">
           <Link
             href="/"
+            prefetch={false}
             className="text-sm font-medium text-primary-light transition-colors hover:text-primary"
           >
             {backLabel ?? "← Ana sayfa"}
           </Link>
           <div className="flex shrink-0 items-center gap-3">
             <LanguageToggle />
-            <Link href="/" className="inline-flex items-center" aria-label="Veni Tales ana sayfa">
+            <Link
+              href="/"
+              prefetch={false}
+              className="inline-flex items-center"
+              aria-label="Veni Tales ana sayfa"
+            >
               <VeniWordmark width={72} title="Veni Tales" />
             </Link>
           </div>
