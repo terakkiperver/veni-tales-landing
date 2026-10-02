@@ -3,9 +3,11 @@
 import Link from "next/link";
 import AppPillButton from "@/components/AppPillButton";
 import HeroScreenCarousel from "@/components/HeroScreenCarousel";
+import { AppleIcon, PlayIcon } from "@/components/StoreIcons";
 import VeniWordmark from "@/components/VeniWordmark";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageProvider";
+import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/storeLinks";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -33,8 +35,17 @@ export default function Hero() {
             {t.nav.howItWorks}
           </a>
           <LanguageToggle />
-          <AppPillButton href="https://apps.apple.com/app/venitales" variant="primary">
-            {t.nav.download}
+          <AppPillButton href={APP_STORE_URL} variant="primary" ariaLabel="App Store">
+            <span className="inline-flex items-center justify-center gap-2">
+              <AppleIcon className="h-4 w-4 shrink-0" />
+              <span>App Store</span>
+            </span>
+          </AppPillButton>
+          <AppPillButton href={PLAY_STORE_URL} variant="primary" ariaLabel="Google Play">
+            <span className="inline-flex items-center justify-center gap-2">
+              <PlayIcon className="h-4 w-4 shrink-0" />
+              <span>Google Play</span>
+            </span>
           </AppPillButton>
         </div>
       </nav>
@@ -64,11 +75,17 @@ export default function Hero() {
               {t.hero.description}
             </p>
 
-            <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-start">
-              <AppPillButton href="https://apps.apple.com/app/venitales" variant="primary">
+            <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start">
+              <AppPillButton href={APP_STORE_URL} variant="primary" ariaLabel="App Store">
                 <span className="inline-flex items-center justify-center gap-3">
                   <AppleIcon className="h-5 w-5 shrink-0" />
                   <span>App Store</span>
+                </span>
+              </AppPillButton>
+              <AppPillButton href={PLAY_STORE_URL} variant="primary" ariaLabel="Google Play">
+                <span className="inline-flex items-center justify-center gap-3">
+                  <PlayIcon className="h-5 w-5 shrink-0" />
+                  <span>Google Play</span>
                 </span>
               </AppPillButton>
               <AppPillButton href="#how" variant="outline">
@@ -138,14 +155,6 @@ function Underline({ className = "" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 200 12" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2 6C40 2 80 2 100 6C120 10 160 10 198 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function AppleIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
     </svg>
   );
 }

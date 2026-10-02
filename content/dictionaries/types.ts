@@ -66,6 +66,7 @@ export type Dictionary = {
     headingLine2: string;
     description: string;
     appStoreFrom: string;
+    playStoreFrom: string;
     download: string;
   };
   footer: {

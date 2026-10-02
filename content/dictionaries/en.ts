@@ -127,6 +127,7 @@ export const en: Dictionary = {
     description:
       "Download now, enter your child's name and listen to the first story made just for them.",
     appStoreFrom: "From App Store",
+    playStoreFrom: "From Google Play",
     download: "Download",
   },
   footer: {

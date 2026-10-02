@@ -129,6 +129,7 @@ export const tr: Dictionary = {
     description:
       "Hemen indirin, çocuğunuzun adını girin, ona özel ilk hikayeyi dinleyin.",
     appStoreFrom: "App Store'dan",
+    playStoreFrom: "Google Play'den",
     download: "İndir",
   },
   footer: {
